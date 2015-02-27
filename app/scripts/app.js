@@ -9,13 +9,14 @@
  * Main module of the application.
  */
 angular
-  .module('chatClientApp', [  'ngAnimate',
-    'ngCookies',
-    'ngResource',
-    'ngRoute',
-    'ngSanitize',
-    'ngTouch',
-    'ngResource',
+  .module('chatClientApp', [  //'ngAnimate',
+  //  'ngCookies',
+  //  'ngResource',
+  //  'ngRoute',
+  //  'ngSanitize',
+  //  'ngTouch',
+  //  'ngResource',
+'ui.bootstrap',
     'restangular'])
   .config(function ($routeProvider, RestangularProvider ) {
     $routeProvider

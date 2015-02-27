@@ -32,8 +32,12 @@
 
       <!--ng-controller="MainCtrl"-->
       <!-- Main view -->
-      <div ng-include="'views/main.html'" ng-controller="MainCtrl">
-
+      <div ng-controller="MainCtrl">
+        <p>
+          <input type="text" value="Search" ng-model="searchByNickname"/>
+          <input type="button" ng-click="searchByNickname()" />
+          <a href="{{chatLink}}">Link</a>
+        </p>
 
       </div>
 
@@ -65,7 +69,9 @@
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/json3/lib/json3.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.10.0/ui-bootstrap.js"></script>
     <script type="text/javascript" src="/js/vendor/lodash/dist/lodash.min.js"></script>
+    <script src="bower_components/restangular/dist/restangular.js"></script>
     <script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/affix.js"></script>
     <script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/alert.js"></script>
     <script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/button.js"></script>
