@@ -8,7 +8,7 @@
  * Controller of the chatClientApp
  */
 angular.module('chatClientApp')
-  .controller('MainCtrl', function ($scope, RestAngular) {
+  .controller('MainCtrl',['$scope', 'RestAngular', function ($scope, RestAngular) {
 
     $scope.searchNickname = "*";
     $scope.nicknameMatchings = [];
@@ -28,4 +28,4 @@ angular.module('chatClientApp')
 
     };
 
-  });
+  }]);

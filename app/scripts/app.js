@@ -8,7 +8,12 @@
  *
  * Main module of the application.
  */
-angular.module('chatClientApp', [])
+angular.module('chatClientApp', ['ngAnimate',
+  //'ngCookies',
+  //'ngResource',
+  'ngRoute',
+ // 'ngSanitize',
+  'restangular'])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {

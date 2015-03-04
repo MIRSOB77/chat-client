@@ -2,7 +2,7 @@
  * Created by mirsad on 26.02.15.
  */
 angular.module('chatClientApp')
-  .controller('PrivateChatCtrl', function ($scope, $routeParams, MessagingService, RestAngular) {
+  .controller('PrivateChatCtrl', [ '$scope', '$routeParams','MessagingService', 'RestAngular', function ($scope, $routeParams, MessagingService, RestAngular) {
 
     MessagingService.receive().then(null, null, function(message) {
       $scope.messages.push(message);
@@ -23,4 +23,4 @@ angular.module('chatClientApp')
     }
 
 
-  });
+  }]);
