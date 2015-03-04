@@ -8,17 +8,8 @@
  *
  * Main module of the application.
  */
-angular
-  .module('chatClientApp', [  //'ngAnimate',
-  //  'ngCookies',
-  //  'ngResource',
-  //  'ngRoute',
-  //  'ngSanitize',
-  //  'ngTouch',
-  //  'ngResource',
-'ui.bootstrap',
-    'restangular'])
-  .config(function ($routeProvider, RestangularProvider ) {
+angular.module('chatClientApp', [])
+  .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
@@ -28,23 +19,11 @@ angular
         templateUrl: 'views/chatWindow.html',
         controller: 'PrivateChatCtrl'
       })
-      //.when('/', {
-      //  templateUrl: 'views/cart.html',
-      //  controller: 'CartCtrl'
-      //})
-      //.when('/shop', {
-      //  templateUrl: 'views/shop.html',
-      //  controller: 'ShopCtrl'
-      //})
-      //.when('/article/:id', {
-      //  templateUrl: 'views/item.html',
-      //  controller: 'ArticleCtrl'
-      //})
       .otherwise({
         redirectTo: '/'
       });
 
-    RestangularProvider.setBaseUrl("http://localhost:8180/chat")
+     //RestangularProvider.setBaseUrl("http://localhost:8180/chat")
   })
   .service('MessagingService',function($q, $timeout) {
 
@@ -54,9 +33,9 @@ angular
     }, messageIds = [];
 
     service.RECONNECT_TIMEOUT = 30000;
-    service.SOCKET_URL = "http::/chat/send";
+    service.SOCKET_URL = "send";
     service.CHAT_TOPIC = "/topic/receiver";
-    service.CHAT_BROKER = "/chatapp/send";
+    service.CHAT_BROKER = "chatapp/send";
 
     service.receive = function() {
       return listener.promise;

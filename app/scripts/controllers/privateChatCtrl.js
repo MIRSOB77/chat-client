@@ -4,7 +4,7 @@
 angular.module('chatClientApp')
   .controller('PrivateChatCtrl', function ($scope, $routeParams, MessagingService, RestAngular) {
 
-    ChatService.receive().then(null, null, function(message) {
+    MessagingService.receive().then(null, null, function(message) {
       $scope.messages.push(message);
     });
 
