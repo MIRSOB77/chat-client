@@ -10,12 +10,17 @@
 angular.module('chatClientApp')
   .controller('MainCtrl',['$scope', 'RestAngular', function ($scope, RestAngular) {
 
-    $scope.searchNickname = "*";
+    //
+    $scope.nicknameToSearch = '*';
     $scope.nicknameMatchings = [];
     $scope.chatLink = "";
 
+    $scope.activeTab = 'global';
+    $scope.loginToken = nil;
 
-
+    $scope.changeTab = function changeTab($tab_name){
+      $scope.activeTab = $tab_name;
+    }
 
     $scope.searchByNickname = function(){
       var singleSearch = RestAngular.all('person', $scope.searchNickname);
@@ -24,8 +29,8 @@ angular.module('chatClientApp')
       if(response.exists){
         $scope.chatLink = "#/private/" + $scope.chatPartnerNickname;
       }
-
-
     };
+
+
 
   }]);

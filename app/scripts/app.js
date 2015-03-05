@@ -38,9 +38,9 @@ angular.module('chatClientApp', ['ngAnimate',
     }, messageIds = [];
 
     service.RECONNECT_TIMEOUT = 30000;
-    service.SOCKET_URL = "send";
+    service.SOCKET_URL = "/chat/send";
     service.CHAT_TOPIC = "/topic/receiver";
-    service.CHAT_BROKER = "chatapp/send";
+    service.CHAT_BROKER = "/chatapp/send";
 
     service.receive = function() {
       return listener.promise;

@@ -32,12 +32,7 @@
 
       <!--ng-controller="MainCtrl"-->
       <!-- Main view -->
-      <div ng-controller="MainCtrl">
-        <p>
-          <input type="text" value="Search" ng-model="searchByNickname"/>
-          <input type="button" ng-click="searchByNickname()" />
-          <a href="{{chatLink}}">Link</a>
-        </p>
+      <div ng-include="'views/main.html'">
 
       </div>
 
